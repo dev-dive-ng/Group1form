@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group 1 Registration Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Registration Form</h1>
+      <!-- Error Summary -->
+      <ul
+        id="errorSummary"
+        class="hidden error-summary"
+        aria-live="polite"
+      ></ul>
+
+      <form
+        id="registrationForm"
+        action="/submit"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- First Name -->
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          required
+          aria-describedby="firstNameError"
+        />
+        <span
+          id="firstNameError"
+          class="error-message"
+          aria-live="polite"
+        ></span>
+
+        <!-- Last Name -->
+        <label for="lastName">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          required
+          aria-describedby="lastNameError"
+        />
+        <span
+          id="lastNameError"
+          class="error-message"
+          aria-live="polite"
+        ></span>
+
+        <!-- Username -->
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          aria-describedby="usernameError"
+        />
+        <span
+          id="usernameError"
+          class="error-message"
+          aria-live="polite"
+        ></span>
+
+        <!-- Password -->
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          aria-describedby="passwordError"
+        />
+        <span
+          id="passwordError"
+          class="error-message"
+          aria-live="polite"
+        ></span>
+        <span id="passwordStrength" class="password-strength"></span>
+
+        <!-- Date of Birth -->
+        <label for="dob">Date of Birth</label>
+        <input
+          type="date"
+          id="dob"
+          name="dob"
+          required
+          aria-describedby="dobError"
+        />
+        <span id="dobError" class="error-message" aria-live="polite"></span>
+
+        <!-- Nationality -->
+        <label for="nationality">Nationality</label>
+        <select
+          id="nationality"
+          name="nationality"
+          required
+          aria-describedby="nationalityError"
+        >
+          <option value="" disabled selected>Select your nationality</option>
+          <option value="af">Afghanistan</option>
+          <option value="al">Albania</option>
+          <option value="dz">Algeria</option>
+          <option value="ao">Angola</option>
+          <option value="ar">Argentina</option>
+          <option value="au">Australia</option>
+          <option value="at">Austria</option>
+          <option value="bd">Bangladesh</option>
+          <option value="be">Belgium</option>
+          <option value="bj">Benin</option>
+          <option value="bw">Botswana</option>
+          <option value="br">Brazil</option>
+          <option value="bg">Bulgaria</option>
+          <option value="bf">Burkina Faso</option>
+          <option value="bi">Burundi</option>
+          <option value="ca">Canada</option>
+          <option value="cm">Cameroon</option>
+          <option value="td">Chad</option>
+          <option value="cl">Chile</option>
+          <option value="cn">China</option>
+          <option value="cg">Congo</option>
+          <option value="ci">Côte d’Ivoire</option>
+          <option value="dk">Denmark</option>
+          <option value="eg">Egypt</option>
+          <option value="et">Ethiopia</option>
+          <option value="fr">France</option>
+          <option value="de">Germany</option>
+          <option value="gh">Ghana</option>
+          <option value="gr">Greece</option>
+          <option value="in">India</option>
+          <option value="id">Indonesia</option>
+          <option value="it">Italy</option>
+          <option value="jp">Japan</option>
+          <option value="ke">Kenya</option>
+          <option value="mg">Madagascar</option>
+          <option value="ml">Mali</option>
+          <option value="mx">Mexico</option>
+          <option value="ma">Morocco</option>
+          <option value="mz">Mozambique</option>
+          <option value="na">Namibia</option>
+          <option value="ng">Nigeria</option>
+          <option value="pt">Portugal</option>
+          <option value="rw">Rwanda</option>
+          <option value="sn">Senegal</option>
+          <option value="za">South Africa</option>
+          <option value="es">Spain</option>
+          <option value="se">Sweden</option>
+          <option value="ch">Switzerland</option>
+          <option value="tz">Tanzania</option>
+          <option value="tn">Tunisia</option>
+          <option value="ug">Uganda</option>
+          <option value="uk">United Kingdom</option>
+          <option value="us">United States</option>
+          <option value="zm">Zambia</option>
+          <option value="zw">Zimbabwe</option>
+        </select>
+        <span
+          id="nationalityError"
+          class="error-message"
+          aria-live="polite"
+        ></span>
+
+        <!-- Terms and Conditions -->
+        <label class="checkbox">
+          <input
+            type="checkbox"
+            id="terms"
+            name="terms"
+            required
+            aria-describedby="termsError"
+          />
+          I accept the
+          <a href="/terms" target="_blank">terms and conditions</a>.
+        </label>
+        <span id="termsError" class="error-message" aria-live="polite"></span>
+
+        <!-- Profile Picture -->
+        <label for="profilePicture">Upload Profile Picture</label>
+        <input
+          type="file"
+          id="profilePicture"
+          name="profilePicture"
+          accept="image/*"
+          required
+          aria-describedby="profilePictureError"
+        />
+        <span
+          id="profilePictureError"
+          class="error-message"
+          aria-live="polite"
+        ></span>
+        <img id="preview" class="profile-preview" alt="Profile Preview" />
+
+        <!-- Submit Button -->
+        <button type="submit">Register</button>
+      </form>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
